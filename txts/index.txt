@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AVA2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://uva.br/wp-content/themes/uva-theme/dist/favicon.ico"
+      type="image/vnd.microsoft.icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <!-- 1220202008 Pedro Henrique Sena Vizeu (Trabalho4) -->
+  <!-- 
+    [x] Campo nome: que deverá analisar se o nome completo possui no mínimo 15 caracteres.
+
+    [x] Campo e-mail: que deverá analisar se o e-mail possui os símbolos mínimos necessários e possui pelo menos 10 caracteres.
+
+    [x] Campo data do nascimento: que deverá receber dias, meses e anos válidos, assim como o envio do foco para o próximo campo, quando estiverem corretos.
+
+    [x] Campo sexo: opções únicas, podendo ser apenas Feminino ou Masculino.
+
+    [x] Campo estado civil: opções únicas, podendo ser apenas Solteiro(a), Casado(a) ou Outros. Caso a escolha do estado civil tenha sido Solteiro, a data de nascimento deverá ser analisada e somente validada se a pessoa tiver mais de 15 anos.
+
+    [x] Campo áreas de interesse: opções múltiplas, podendo o usuário escolher entre Análise, Banco de dados, Desenvolvimento, Engenharia de software e/ou Redes de computadores.
+
+    [x] Ao final, o botão de envio deve validar todos os campos e apresentar uma mensagem de dados enviados, caso os dados estejam válidos, ou uma mensagem informando o campo que não foi validado, com o envio do foco para o respectivo campo.
+
+    [x] Adicional: Responsividade
+  -->
+  <body>
+    <main>
+      <form method="post" class="flex flex-col gap-1">
+        <header class="flex gap-1 wrap">
+          <a href="https://uva.br/" target="_blank" rel="noopener noreferrer">
+            <img src="imagens/uva-logo.svg" alt="Logo UVA" />
+          </a>
+          <h1>Cadastro</h1>
+        </header>
+
+        <label for="nome" class="flex flex-col gap-05">
+          <p class="input-title">Nome</p>
+          <input type="text" name="nome" id="nome" placeholder="Nome completo" />
+        </label>
+
+        <label for="email" class="flex flex-col gap-05">
+          <p class="input-title">E-mail</p>
+          <input type="email" name="email" id="email" placeholder="seumelhor@email.com" />
+        </label>
+
+        <label for="nasc" class="flex flex-col gap-05">
+          <p class="input-title">Data de nascimento</p>
+          <input type="date" name="nasc" id="nasc" />
+        </label>
+
+        <div class="flex flex-col gap-05">
+          <p class="input-title">Sexo</p>
+          <div class="flex gap-1 wrap">
+            <label for="m">
+              <input type="radio" name="sexo" id="m" value="m" />
+              Masculino
+            </label>
+            <label for="f">
+              <input type="radio" name="sexo" id="f" value="f" />
+              Feminino
+            </label>
+          </div>
+        </div>
+
+        <label for="estCivil" class="flex flex-col gap-05">
+          <p class="input-title">Estado civil</p>
+          <select name="estCivil" id="estCivil">
+            <option value="" disabled hidden selected>Estado civil</option>
+            <option value="solteiro">Solteiro(a)</option>
+            <option value="casado">Casado(a)</option>
+            <option value="outros">Outros</option>
+          </select>
+        </label>
+
+        <div class="interesses-container flex flex-col gap-05">
+          <p class="input-title">Interesses</p>
+          <label for="analise" class="flex gap-05">
+            <input type="checkbox" id="analise" name="analise" />
+            Análise
+          </label>
+          <label for="bancoDados" class="flex gap-05">
+            <input type="checkbox" id="bancoDados" name="bancoDados" />
+            Banco de dados
+          </label>
+          <label for="desenvolvimento" class="flex gap-05">
+            <input type="checkbox" id="desenvolvimento" name="desenvolvimento" />
+            Desenvolvimento
+          </label>
+          <label for="engSoftware" class="flex gap-05">
+            <input type="checkbox" id="engSoftware" name="engSoftware" />
+            Engenharia de software
+          </label>
+          <label for="redesComp" class="flex gap-05">
+            <input type="checkbox" id="redesComp" name="redesComp" />
+            Redes de computadores
+          </label>
+        </div>
+
+        <input type="submit" value="Enviar" class=".submit-disabled" />
+      </form>
+
+      <section class="side-image"></section>
+    </main>
+
+    <footer>
+      Desenvolvido por
+      <a href="http://github.com/pedrosenav" target="_blank" rel="noopener noreferrer">
+        Pedro Sena
+      </a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+@charset "UTF-8";
+@import url('reset.css');
+
+/* font-family: 'Inter', sans-serif; */
+/* font-family: 'Poppins', sans-serif; */
+
+:root {
+  --uva-blue: #004b78;
+  --uva-yellow: #ffd000;
+  --uva-magenta: #e60073;
+  --uva-light-teal: #e2fff6;
+  --uva-teal: #8cd5be;
+  --uva-light-gray: #a1a1a1;
+  --uva-gray: #383838;
+  --uva-dark-gray: #141414;
+
+  --error-red: #dc2626;
+  --success-green: #13b30e;
+
+  --font-para: 'Inter', sans-serif;
+  --font-title: 'Poppins', sans-serif;
+}
+
+::placeholder {
+  color: var(--uva-light-gray);
+}
+
+*:focus {
+  outline-color: var(--uva-teal);
+}
+
+body {
+  background-color: var(--uva-light-teal);
+  color: var(--uva-dark-gray);
+  font-family: var(--font-para);
+  font-size: 1rem;
+
+  min-height: 100vh;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer > a {
+  text-decoration: none;
+  color: var(--uva-blue);
+}
+
+footer {
+  color: var(--uva-gray);
+  padding: 2rem;
+}
+
+main {
+  background-color: #fff;
+  box-shadow: 0rem 0.25rem 1rem rgba(0, 0, 0, 0.15);
+
+  width: clamp(10rem, 100%, 65rem);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.side-image {
+  background-image: url('imagens/alunos-computador-editado.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+form {
+  padding: 2.5rem;
+}
+
+header {
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-family: var(--font-title);
+  color: var(--uva-blue);
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.input-title {
+  font-family: var(--font-para);
+  font-weight: 500;
+  color: var(--uva-blue);
+}
+
+input,
+select,
+option {
+  padding: 0.5rem;
+  border: 0.05rem solid var(--uva-light-gray);
+  accent-color: var(--uva-blue);
+}
+
+input:hover,
+select:hover,
+option:hover {
+  border-color: var(--uva-gray);
+}
+
+input[type='text'],
+input[type='email'],
+input[type='date'] {
+  appearance: none;
+  min-width: 100%;
+  color: var(--uva-gray);
+}
+
+input[type='submit'] {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: var(--uva-magenta);
+  appearance: none;
+
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+
+  cursor: pointer;
+  transition: filter 0.1s ease-out;
+}
+
+input[type='submit']:hover {
+  filter: brightness(95%);
+}
+
+input[type='submit']:active {
+  filter: brightness(105%);
+}
+
+.interesses-container {
+  align-items: flex-start;
+  padding-bottom: 1rem;
+}
+
+/* utility classes */
+
+.flex {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap-05 {
+  gap: 0.5rem;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+/* queries */
+
+@media (max-width: 768px) {
+  .side-image {
+    display: none;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+}
